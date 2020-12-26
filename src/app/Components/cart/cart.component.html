@@ -1,0 +1,35 @@
+<table class="table table-dark">
+    <thead>
+      <tr>
+        <th scope="col">S.N.</th>
+        <th scope="col">Product</th>
+        <th scope="col">Price</th>
+        <th scope="col">Quantity</th>
+        <th scope="col">Total Price</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of cartItems">
+        <th scope="row">1</th>
+        <td>{{item.name}}</td>
+        <td>{{item.price}}</td>
+        <td>{{item.qty}}</td>
+        <td>{{item.price * item.qty}}</td>
+      </tr>
+      <td colspan="4"> All TOTAL</td> <td>{{AllTotal}}</td>
+    </tbody>
+  </table>
+
+  <button (click)="ShowShippingDetailsForm = true" >CheckOut</button>
+  
+  <form *ngIf="ShowShippingDetailsForm"  #shippingDetails = "ngForm" (ngSubmit)="orderCart(shippingDetails.value)">
+    <div class="form-group">
+        <label>Shipping Address</label>
+        <input type="text" class="form-control" name="shippingAddress" ngModel>
+    </div>
+    <div class="form-group">
+        <label>Phone Number</label>
+        <input type="number" class="form-control" name="phone" ngModel>
+    </div>
+    <button type="submit">Place Order</button>
+    </form>

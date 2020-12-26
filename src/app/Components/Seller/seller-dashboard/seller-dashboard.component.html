@@ -1,0 +1,48 @@
+<div class="row">
+  <div class="col-3">
+    <!-- <img src="src/assets/images/userImg" alt="Seller Image"> -->
+    <div class="list-group">
+      <h5>Categories</h5>
+      <button class="list-group-item" routerLink="/seller/addProduct">Add Product</button>
+      <button class="list-group-item" (click)="ProductList=true">My Products</button>
+      <button class="list-group-item" (click)="showMyOrders=true">Orders for Me</button>
+      <button class="list-group-item">LogOut</button>
+    </div>
+  </div>
+
+  <!-- [ngSwitch]="show"
+  *ngSwitchCase="ProductList" -->
+ 
+  <!-- <router-outlet></router-outlet> -->
+
+  <div class="col-9">
+    <div class="card-group" *ngIf="ProductList">
+      <div class="card" *ngFor="let product of products">
+        <img>
+        <div class="card-body">
+          <!-- <h5>{{product._id}}</h5> -->
+          <h5 class="card-title">{{product.name}}</h5>              
+
+            <p class="card-text">{{product.description}}</p>
+            <p class="card-text"><small class="text-muted">{{product.price}}</small></p>
+            <button class="float-left btn btn-success" (click)="beforeUpdated(product)">Update</button>
+              <button class="float-right btn btn-danger" (click)="deleteProduct(product._id)">Delete</button>
+            <!-- <button (click)="onDelete(product.id)" >Delete</button> -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-9">
+    <div class="card-group" *ngIf="showMyOrders">
+      <div class="card" *ngFor="let order of myOrders">
+        <img>
+        <div class="card-body">
+          <h5 class="card-title">{{order.product}}</h5>              
+            <p class="card-text">{{order.price}}</p>
+            <p class="card-text"><small class="text-muted">{{order.quantity}}</small></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

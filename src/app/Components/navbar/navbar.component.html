@@ -1,0 +1,30 @@
+<div>
+    <nav class="navbar navbar-dark bg-dark">
+      <li class="nav-item">
+        <a class="nav-link" href="#">QuickBazzar</a>
+      </li>
+      <form class="form-inline">
+        <input
+          class="form-control mr-sm-2"
+          type="search"
+          placeholder="Search"
+          aria-label="Search"
+        />
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+          Search
+        </button>
+      </form>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/signup">Register</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/login">Log In</a>
+      </li>  
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/myCart" >MyCart-{{TotalItemsInCart}}</a>
+      </li>  
+      <li class="nav-item">
+        <a class="nav-link" href="#">Log Out</a>
+      </li>
+    </nav>
+  </div>

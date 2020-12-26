@@ -1,0 +1,30 @@
+
+<div >
+    <navbar></navbar>
+</div>
+
+
+<div class="prod-details">
+    <div class="card-group col-4">
+        <div class="card" >
+          <div class="card-body">
+            <h5>{{ product._id }}</h5>
+            <h5 class="card-title">{{ product.name }}</h5>
+            <p class="card-text">{{ product.description }}</p>
+            <p class="card-text">
+              <small class="text-muted">{{ product.price }}</small>
+            </p>
+            Quantity: <button type="button" (click)="Dcr()" [disabled]=" productQuantity < 1 ">-</button>
+              <button>{{productQuantity}}</button>
+            <button type="button"  (click)="Incr()">+</button>
+            <div>
+            <!-- <button type="button" class="btn btn-info" (click)="addToCart(product._id)" >Add to Cart</button> -->
+            <button type="button" class="btn btn-info" (click)="addToCart(product)" >Add to Cart</button>
+            </div>
+            <!-- <button type="button" class="btn btn-success" (click)="ChangeQty(product._id, 1)">+</button> --> 
+    
+          </div>
+        </div>
+      </div>
+    
+</div>
